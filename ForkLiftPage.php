@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['username'])){
+        header('location:login.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -10,6 +16,8 @@
 </head>
 <body>
     <header>
+    <h2><?php
+        echo "Hello " . htmlspecialchars($_COOKIE['username']);?></h2>
         <h1>Welcome to Forklift Simulator</h1>
     </header>
     <main>
@@ -47,10 +55,6 @@
         </form>
         <button onclick="document.getElementById('popupForm').style.display='none'">Close</button>
     </div>
-    
-    <?php
-    
-    ?>
     </main>
     <footer>
         <?php include 'footer.php'; ?>

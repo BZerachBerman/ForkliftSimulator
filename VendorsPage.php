@@ -1,3 +1,9 @@
+<?php
+    session_start();
+    if(!isset($_SESSION['username'])){
+        header('location:login.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -6,10 +12,11 @@
     <title>Forklift Simulator</title>
     <link rel="stylesheet" href="styles.css">
     <?php include 'header.php'; ?>
-
 </head>
 <body>
     <header>
+    <h2><?php
+        echo "Hello " . htmlspecialchars($_COOKIE['username']);?></h2>
         <h1>Welcome to the Vendors Page</h1>
     </header>
     <main>

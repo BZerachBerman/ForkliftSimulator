@@ -1,3 +1,10 @@
+<?php
+    session_start();
+    //session_unset();
+    if(!isset($_SESSION['username'])){
+        header('location:login.php');
+    }
+?>
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -8,6 +15,9 @@
 </head>
 
 <body>
+    <?php
+        echo "Hello " . htmlspecialchars($_COOKIE['username']);
+    ?>
 </body>
 
 <footer>

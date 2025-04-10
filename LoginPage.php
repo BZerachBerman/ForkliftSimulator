@@ -19,6 +19,9 @@
             <input type="password" id="password" name="password" required>
         </div>
         <button type="submit">Login</button>
+        <div class="form-group">
+            <a href="register.php" class="btn">Create New Account</a>
+        </div>
     </form>
 </div>
 </body>

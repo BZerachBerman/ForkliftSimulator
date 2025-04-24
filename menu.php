@@ -14,10 +14,10 @@
      // Assuming you have a variable that tracks login status
      if (isset($_SESSION['username'])) {
          // User is logged in
-         echo '<li><a href="logout.php">Logout</a></li>';
+         echo '<li><a href="LoginLogout/logout.php">Logout</a></li>';
      } else {
          // User is not logged in
-         echo '<li><a href="LoginPage.php">Login</a></li>';
+         echo '<li><a href="LoginLogout/LoginPage.php">Login</a></li>';
      }
      ?>
 </ul>

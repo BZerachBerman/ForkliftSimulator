@@ -1,8 +1,8 @@
 <?php
     session_start();
-    //session_unset();
+    session_unset();
     if(!isset($_SESSION['username'])){
-        header('location:LoginPage.php');
+        header('location:LoginLogout/LoginPage.php');
     }
 ?>
 <!DOCTYPE html>

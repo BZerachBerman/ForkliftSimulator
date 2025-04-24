@@ -28,7 +28,7 @@ if ($_SERVER["REQUEST_METHOD"] == "POST") {
         // Set a cookie that stores the username
         setcookie('username', $username);
         // Redirect to a different page after successful login
-        header('location: HomePage.php');
+        header('Location: ForkliftSimulator/HomePage.php');
     } else {
         // Invalid credentials, redirect back to login page with error message
         header('location: LoginPage.php?error=invalid_credentials');

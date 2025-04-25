@@ -1,7 +1,7 @@
 <?php
     session_start();
     if(!isset($_SESSION['username'])){
-        header('location:LoginPage.php');
+        header('location:..\LoginLogout\LoginPage.php');
     }
 ?>
 <!DOCTYPE html>

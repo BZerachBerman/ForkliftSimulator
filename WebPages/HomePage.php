@@ -1,8 +1,8 @@
 <?php
     session_start();
-    session_unset();
+    //session_unset();
     if(!isset($_SESSION['username'])){
-        header('location:LoginLogout/LoginPage.php');
+        header('Location: ..\LoginLogout\LoginPage.php');
     }
 ?>
 <!DOCTYPE html>
@@ -11,17 +11,18 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forklift Simulator</title>
-    <?php include 'header.php'; ?>
+    <link rel="stylesheet" href="..\StyleComponents\styles.css">
+    <?php include '..\StyleComponents\header.php'; ?>
 </head>
 
 <body>
     <?php
-        echo "Hello " . htmlspecialchars($_COOKIE['username']);
+        echo "Hello " . htmlspecialchars($_SESSION['username']);
     ?>
 </body>
 
 <footer>
-        <?php include 'footer.php'; ?>
+        <?php include '..\StyleComponents\footer.php'; ?>
 </footer>
 
 </html>

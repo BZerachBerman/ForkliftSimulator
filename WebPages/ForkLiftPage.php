@@ -10,14 +10,14 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forklift Simulator</title>
-    <link rel="stylesheet" href="styles.css">
-    <?php include 'header.php'; ?>
+    <link rel="stylesheet" href="..\StyleComponents\styles.css">
+    <?php include '..\StyleComponents\header.php'; ?>
 
 </head>
 <body>
     <header>
     <h2><?php
-        echo "Hello " . htmlspecialchars($_COOKIE['username']);?></h2>
+        echo "Hello " . htmlspecialchars($_SESSION['username']);?></h2>
         <h1>Welcome to Forklift Simulator</h1>
     </header>
     <main>
@@ -29,14 +29,14 @@
             <input type="text" id="Forklift Model" name="Model" placeholder="Model" 
              onfocus="this.placeholder = ''" onblur="this.placeholder = 'Model'"
              style="width: 100%;"/>
-    
+
+             
             <select id="Manufacturer" name="Manufacturer" style="width: 100%;" onfocus="this.style.color='black';" onblur="if(this.value==''){this.style.color='gray';}">
-                <option value="" disabled selected style="color: gray;">Manufacturer</option>
-                <option value="Toyota">Toyota</option>
-                <option value="Caterpillar">Caterpillar</option>
-                <option value="Hyster">Hyster</option>
-                <option value="Komatsu">Komatsu</option>
-                <option value="Mitsubishi">Mitsubishi</option>
+               <?php
+               foreach ($items as $item) {
+                echo '<option value="' . htmlspecialchars($item) . '">' . htmlspecialchars($item) . '</option>';
+               }
+                ?>
             </select>
     
             <div style="display: flex; align-items: center;">
@@ -57,7 +57,7 @@
     </div>
     </main>
     <footer>
-        <?php include 'footer.php'; ?>
+        <?php include '..\StyleComponents\footer.php'; ?>
     </footer>
 </body>
 </html>

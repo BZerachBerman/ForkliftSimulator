@@ -1,10 +1,13 @@
 <?php
+require __DIR__ . '../DBAccessComponents/DBAccessInfo.php';
+use DBAccessComponents\DBInfo;
 session_start();
 // Database connection details
-$host = 'localhost';
-$DBName = 'forklifts';
-$DBUser = 'root';
-$DBPassword = '';
+$DBAccessInfo = new DBInfo();
+$host = $DBAccessInfo->host;
+$DBName = $DBAccessInfo->DBName;
+$DBUser = $DBAccessInfo->DBUser;
+$DBPassword = $DBAccessInfo->DBPassword;
 
 if ($_SERVER["REQUEST_METHOD"] == "POST") {
     $username = $_POST['username'];

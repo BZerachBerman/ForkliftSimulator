@@ -1,4 +1,6 @@
 <?php
+require_once 'DBAccessInfo.php';
+
 // Database connection details
 $host = 'localhost';
 $dbname = 'forklifts';
@@ -24,7 +26,7 @@ $sql = "INSERT INTO salesmen (UserName, Password, Role)
 VALUES ('$username', '$password2', 'Admin')";
 
 if ($conn->query($sql) === TRUE) {
-    header("Location: HomePage.php");
+    header("Location: ..\WebPages\HomePage.php");
     exit();
 } else {
     echo "Error: " . $sql . "<br>" . $conn->error;

@@ -1,5 +1,3 @@
-//TODO: Fix the DBAcess stuff. Get the login_process.php to work with the DBAccessComponents.
-
 <?php
     session_start();
     //session_unset();

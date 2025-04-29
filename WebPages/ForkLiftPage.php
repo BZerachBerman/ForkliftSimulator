@@ -17,7 +17,7 @@
 <body>
     <header>
     <h2><?php
-        echo "Hello " . htmlspecialchars($_SESSION['username']);?></h2>
+        echo "Hello " . $_SESSION['username'];?></h2>
         <h1>Welcome to Forklift Simulator</h1>
     </header>
     <main>

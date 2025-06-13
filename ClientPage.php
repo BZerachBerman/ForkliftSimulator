@@ -10,8 +10,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forklift Simulator</title>
-    <link rel="stylesheet" href="..\StyleComponents\styles.css">
-    <?php include '..\StyleComponents\header.php'; ?>
+    <link rel="stylesheet" href="styles.css">
+    <?php include 'header.php'; ?>
 </head>
 <body>
     <header>
@@ -23,7 +23,7 @@
         <p>This is the client page for the Forklift Simulator.</p>
     </main>
     <footer>
-        <?php include '..\StyleComponents\footer.php'; ?>
+        <?php include 'footer.php'; ?>
     </footer>
 </body>
 </html>

@@ -9,7 +9,7 @@
 <body>
     <div class="form-container">
         <h2>Create an Account</h2>
-        <form action="process_registerUser.php" method="POST">
+        <form action="registerUserProcessor.php" method="POST">
             <input type="text" name="username" placeholder="Username" required>
             <input type="password" name="password" placeholder="Password" required>
             <input type="password" name="confirm_password" placeholder="Confirm Password" required>

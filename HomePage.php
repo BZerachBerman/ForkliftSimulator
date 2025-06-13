@@ -2,7 +2,7 @@
     session_start();
     //session_unset();
     if(!isset($_SESSION['username'])){
-        header('Location: ..\LoginLogout\LoginPage.php');
+        header('Location: LoginPage.php');
     }
 ?>
 <!DOCTYPE html>
@@ -11,8 +11,8 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Forklift Simulator</title>
-    <link rel="stylesheet" href="..\StyleComponents\styles.css">
-    <?php include '..\StyleComponents\header.php'; ?>
+    <link rel="stylesheet" href="styles.css">
+    <?php include 'header.php'; ?>
 </head>
 
 <body>
@@ -22,7 +22,7 @@
 </body>
 
 <footer>
-        <?php include '..\StyleComponents\footer.php'; ?>
+        <?php include 'footer.php'; ?>
 </footer>
 
 </html>

@@ -126,25 +126,26 @@ class DBAccessor {
         return $manufacturers;
     }
 
-    function addNewForklift($model, $manufacturer, $liftCapacity, $liftHeight) {
+    function addNewForklift($model, $manufacturer, $liftCapacity, $liftHeight, $serialNum) {
         // Sanitize user input to prevent SQL injection
         $model = htmlspecialchars($model);
         $manufacturer = htmlspecialchars($manufacturer);
         $liftCapacity = htmlspecialchars($liftCapacity);
         $liftHeight = htmlspecialchars($liftHeight);
+        $serialNum = htmlspecialchars($serialNum);
         // Database connection details
         $host = $this->host;
         $DBName = $this->DBName;
         $DBUser = $this->DBUser;
         $DBPassword = $this->DBPassword;
-
+    
         // Create a connection to the database
         $conn = new mysqli($host, $DBUser, $DBPassword, $DBName);
         if ($conn->connect_error) {
             die("Connection failed: " . $conn->connect_error);
         }
         // Insert the new forklift into the database
-        $sql = "INSERT INTO forklift (ModelNum, Manufacturer, LiftCapacity) VALUES ('$model', '$manufacturer', '$liftCapacity')";
+        $sql = "INSERT INTO forklift (ModelNum, Manufacturer, LiftCapacity, SerialNum) VALUES ('$model', '$manufacturer', '$liftCapacity', '$serialNum')";
         return $conn->query($sql);
     }
 }

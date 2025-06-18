@@ -29,6 +29,9 @@ require_once ('ForkliftSubmissionProcessor.php');
                 <input type="text" id="ForkliftModel" name="Model" placeholder="Model" 
                     onfocus="this.placeholder = ''" onblur="this.placeholder = 'Model'" class="full-width-input"/>
 
+                <input type="text" id="serialNum" name="serialNum" placeholder="Serial Number" 
+                    onfocus="this.placeholder = ''" onblur="this.placeholder = 'Serial Number'" class="full-width-input"/>
+
             <select id="Manufacturer" name="Manufacturer" class="full-width-input" placeholder="Manufacturer"
                 onfocus="this.style.color='black';" onblur="if(this.value==''){this.style.color='gray';}">
                 <?php

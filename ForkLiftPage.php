@@ -1,4 +1,6 @@
 <?php
+require 'DBAccessInfo.php';
+require_once ('ForkliftSubmissionProcessor.php');
     session_start();
     if(!isset($_SESSION['username'])){
         header('location: LoginPage.php');
@@ -13,8 +15,8 @@
     <link rel="stylesheet" href="styles.css">
     <link rel="stylesheet" href="ForkliftFormCSS.css">
    <?php include 'header.php'; ?>
-
 </head>
+
 <body>
     <header>
         <h2><?php echo "Hello " . $_SESSION['username']; ?></h2>
@@ -27,17 +29,27 @@
                 <input type="text" id="ForkliftModel" name="Model" placeholder="Model" 
                     onfocus="this.placeholder = ''" onblur="this.placeholder = 'Model'" class="full-width-input"/>
 
-                <select id="Manufacturer" name="Manufacturer" class="full-width-input" 
-                
-                    onfocus="this.style.color='black';" onblur="if(this.value==''){this.style.color='gray';}">                    <?php
+            <select id="Manufacturer" name="Manufacturer" class="full-width-input" placeholder="Manufacturer"
+                onfocus="this.style.color='black';" onblur="if(this.value==''){this.style.color='gray';}">
+                <?php
                     $DBAccessor = new DBAccessor();
                     $manufacturers = $DBAccessor->getAllManufacturers();
                     foreach ($manufacturers as $manufacturer) {
-                        echo '<option value="' . htmlspecialchars($manufacturer).'">' . htmlspecialchars($manufacturer).'</option>';
+                        echo '<option value="' . htmlspecialchars($manufacturer) . '">' . htmlspecialchars($manufacturer) . '</option>';
                     }
-                    ?>
-                </select>
+                ?>
+            </select>
 
+            <select id="Vendor" name="Vendor" class="full-width-input"  placeholder="Vendor"
+                onfocus="this.style.color='black';" onblur="if(this.value==''){this.style.color='gray';}">
+                <?php
+                    $DBAccessor = new DBAccessor();
+                    $vendors = $DBAccessor->getAllVendors();
+                    foreach ($vendors as $vendor) {
+                        echo '<option value="' . htmlspecialchars($vendor) . '">' . htmlspecialchars($vendor) . '</option>';
+                    }
+                ?>
+            </select>
                 <div class="input-with-unit">
                     <input type="number" id="liftCapacity" name="liftCapacity" placeholder="Lift Capacity" min="3000" max="75000" step="1000" 
                         class="full-width-input" onfocus="this.placeholder = ''" 
@@ -50,6 +62,7 @@
                         class="full-width-input" onfocus="this.placeholder = ''" onblur="this.placeholder = 'Lift Height';"/>
                     <span>Ft</span>
                 </div>
+                
                 <input type="submit" id="Button" value="Submit">
             </form>
             <button class="close-popup-btn" onclick="document.getElementById('popupForm').style.display='none'">Close</button>
